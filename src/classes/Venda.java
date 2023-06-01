@@ -1,18 +1,21 @@
 package classes;
-import java.io.Serializable;
-import java.util.Calendar;
 
-public class Venda implements Serializable{
+import java.io.Serializable;
+
+
+public class Venda implements Serializable {
     private int id;
-    private Calendar dataVenda;
+    private String dataVenda;
     private int idCliente;
     private int idProduto;
+    private double total;
 
-    public Venda(int id, Calendar dataVenda, int idCliente, int idProduto) {
+    public Venda(int id, String dataVenda, int idCliente, int idProduto, double total) {
         this.id = id;
         this.dataVenda = dataVenda;
         this.idCliente = idCliente;
         this.idProduto = idProduto;
+        this.total = total;
     }
 
     public int getId() {
@@ -23,11 +26,11 @@ public class Venda implements Serializable{
         this.id = id;
     }
 
-    public Calendar getDataVenda() {
+    public String getDataVenda() {
         return dataVenda;
     }
 
-    public void setDataVenda(Calendar dataVenda) {
+    public void setDataVenda(String dataVenda) {
         this.dataVenda = dataVenda;
     }
 
@@ -51,6 +54,14 @@ public class Venda implements Serializable{
     public String toString() {
         return "Venda [id=" + id + ", dataVenda=" + dataVenda + ", idCliente=" + idCliente + ", idProduto=" + idProduto
                 + "]";
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setTotal(double total) {
+        this.total = total;
     }
 
 }

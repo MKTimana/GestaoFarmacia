@@ -6,11 +6,11 @@ public class Produto implements Serializable{
     private int id;
     private String nome;
     private String categoria;
-    private Calendar entStock;
+    private String entStock;
     private int quantidade;
     private double preco;
 
-    public Produto(int id, String nome, String categoria, Calendar entStock, int quantidade, double preco) {
+    public Produto(int id, String nome, String categoria, String entStock, int quantidade, double preco) {
         this.id = id;
         this.nome = nome;
         this.categoria = categoria;
@@ -44,11 +44,11 @@ public class Produto implements Serializable{
         this.categoria = categoria;
     }
 
-    public Calendar getEntStock() {
+    public String getEntStock() {
         return entStock;
     }
 
-    public void setEntStock(Calendar entStock) {
+    public void setEntStock(String entStock) {
         this.entStock = entStock;
     }
 
@@ -70,8 +70,8 @@ public class Produto implements Serializable{
 
     @Override
     public String toString() {
-        return "Produto [id=" + id + ", nome=" + nome + ", categoria=" + categoria + ", entStock=" + entStock
-                + ", quantidade=" + quantidade + ", preco=" + preco + "]";
+        // return "Produto [id=" + id + ", nome=" + nome + ", categoria=" + categoria + ", entStock=" +entStock.get(Calendar.DAY_OF_MONTH)+"/"+entStock.get(Calendar.MONTH)+"/"+entStock.get(Calendar.YEAR)+ ", quantidade=" + quantidade + ", preco=" + preco + "]";
+        return "Produto [id=" + id + ", nome=" + nome + ", categoria=" + categoria + ", entStock=" +entStock+", quantidade=" + quantidade + ", preco=" + preco + "]";
     }
 
 }
